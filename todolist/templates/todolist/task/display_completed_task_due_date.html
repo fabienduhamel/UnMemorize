@@ -1,0 +1,14 @@
+{% load i18n %}
+{% load due_date_extras %}
+
+{% if task.created_at|is_in_current_year %}
+	<span class="due_date">{{ task.created_at |date:"d b" }} -<br/>{{ task.completed_at |date:"d b" }}</span>
+{% else %}
+	<span class="due_date">{{ task.created_at |date:"d b y" }}
+		{% if task.completed_at|is_in_current_year %}
+			-<br/>{{ task.completed_at |date:"d b" }}
+		{% else %}
+			-<br/>{{ task.completed_at |date:"d b y" }}
+		{% endif %}
+	</span>
+{% endif %}

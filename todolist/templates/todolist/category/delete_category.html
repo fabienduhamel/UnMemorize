@@ -1,0 +1,12 @@
+{% load i18n %}
+
+<form id="delete_category_form" action="{% url 'remove_category' %}" method="POST">
+	{% csrf_token %}
+	<select name="category_id">
+	{% for category in category_list %}
+		<option value="{{ category.id }}">{{ category.name }}</option>
+	{% endfor %}
+	</select>
+	<input type="submit" id="delete_category_button" class="btn btn-warning" value="{% trans 'Delete' %}" />
+</form>
+

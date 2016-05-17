@@ -1,0 +1,87 @@
+[
+	{
+		"pk": 1, 
+		"model": "todolist.hexadecimalcolor", 
+		"fields": {
+			"created_at": "2013-10-19 12:38:40",
+			"updated_at": "2013-10-19 12:38:40",
+			"value": "FFFFFF"
+		}
+	},
+	{
+		"pk": 2, 
+		"model": "todolist.hexadecimalcolor", 
+		"fields": {
+			"created_at": "2013-10-19 12:38:40",
+			"updated_at": "2013-10-19 12:38:40",
+			"value": "F89406"
+		}
+	},
+	{
+		"pk": 3, 
+		"model": "todolist.hexadecimalcolor", 
+		"fields": {
+			"created_at": "2013-10-19 12:38:40",
+			"updated_at": "2013-10-19 12:38:40",
+			"value": "F40101"
+		}
+	},
+	{
+		"pk": 4, 
+		"model": "todolist.hexadecimalcolor", 
+		"fields": {
+			"created_at": "2013-10-19 12:38:40",
+			"updated_at": "2013-10-19 12:38:40",
+			"value": "19A6FD"
+		}
+	},
+	{
+		"pk": 1, 
+		"model": "todolist.priority", 
+		"fields": {
+			"created_at": "2013-10-19 12:38:40",
+			"updated_at": "2013-10-19 12:38:40",
+			"value": "0",
+			"color": "1"
+		}
+	},
+	{
+		"pk": 2, 
+		"model": "todolist.priority", 
+		"fields": {
+			"created_at": "2013-10-19 12:38:40",
+			"updated_at": "2013-10-19 12:38:40",
+			"value": "1",
+			"color": "2"
+		}
+	},
+	{
+		"pk": 3, 
+		"model": "todolist.priority", 
+		"fields": {
+			"created_at": "2013-10-19 12:38:40",
+			"updated_at": "2013-10-19 12:38:40",
+			"value": "2",
+			"color": "3"
+		}
+	},
+	{
+		"pk": 4, 
+		"model": "todolist.priority", 
+		"fields": {
+			"created_at": "2013-10-19 12:38:40",
+			"updated_at": "2013-10-19 12:38:40",
+			"value": "-1",
+			"color": "4"
+		}
+	},
+	{
+		"pk": 1, 
+		"model": "todolist.category", 
+		"fields": {
+			"created_at": "2013-10-19 12:38:40",
+			"updated_at": "2013-10-19 12:38:40",
+			"name": "General"
+		}
+	}
+]

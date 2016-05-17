@@ -1,0 +1,13 @@
+{% load i18n %}
+
+<form id="update_category_form" action="{% url 'update_category' %}" method="post">
+	{% csrf_token %}
+	<input type="hidden" id="category_id" name="id" value="{{ category.id }}"/>
+	{{ category_form.name.errors }}
+	{% if category_form.name.errors %}
+	<input type="text" name="name" maxlength="30" id="id_name">
+	{% else %}
+	<input type="text" name="name" maxlength="30" id="id_name" value="{{ category.name }}">
+	{% endif %}
+	<input type="submit" id="update_category_button" class="btn btn-warning" value="{% trans 'Update' %}" />
+</form>

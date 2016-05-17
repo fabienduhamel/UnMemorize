@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+{% load i18n %}
+
+	<head>
+
+		<link rel="shortcut icon" href="{{ STATIC_URL }}todolist/img/favicon.ico" type="image/x-icon">
+
+
+		<link href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+		<link href="{{ STATIC_URL }}bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+		<link rel="stylesheet" href="{{ STATIC_URL }}font-awesome/css/font-awesome.min.css">
+		<script src="{{ STATIC_URL }}jquery/js/jquery-1.10.2.min.js"></script>
+		<script src="{{ STATIC_URL }}jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js"></script>
+		<script src="{{ STATIC_URL }}bootstrap/js/bootstrap.min.js"></script>
+		<script src="{{ STATIC_URL }}eternicode-bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+		<link rel="stylesheet" href="{{ STATIC_URL }}eternicode-bootstrap-datepicker/css/datepicker.css">
+
+		<link href="{{ STATIC_URL }}todolist/css/layout.css" rel="stylesheet" type="text/css"/>
+		<script src="{{ STATIC_URL }}todolist/js/index.js"></script>
+
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="robots" content="noindex,nofollow" />
+		<meta name="viewport" content="width=device-width"/>
+		
+		<title>{% block title %}UnMemorize{% endblock %}</title>
+
+		{% block header %}
+		{% endblock %}
+	</head>
+
+	<body>
+
+		<div class="modal hide fade" id="add_category_popup">
+			<div class="modal-header"> <a class="close" data-dismiss="modal">×</a>
+				<h4 id="add_category_title">
+					{% trans "Add a category..." %}
+					<img class="loading_img" src="{{ STATIC_URL }}todolist/img/ajax-loader_orange.gif" alt="Loading"/>
+				</h4>
+			</div>
+			<div class="modal-body text-center">
+			</div>
+		</div>
+
+		<div class="modal hide fade" id="modify_category_popup">
+			<div class="modal-header"> <a class="close" data-dismiss="modal">×</a>
+				<h4 id="modify_category_title">
+					{% trans "Modify category..." %}
+					<img class="loading_img" src="{{ STATIC_URL }}todolist/img/ajax-loader_orange.gif" alt="Loading"/>
+				</h4>
+			</div>
+			<div class="modal-body text-center">
+			</div>
+		</div>
+
+		<div class="modal hide fade" id="delete_category_popup">
+			<div class="modal-header"> <a class="close" data-dismiss="modal">×</a>
+				<h4 id="delete_category_title">
+					{% trans "Delete a category..." %}
+					<img class="loading_img" src="{{ STATIC_URL }}todolist/img/ajax-loader_orange.gif" alt="Loading"/>
+				</h4>
+			</div>
+			<div class="modal-body text-center">
+			</div>
+		</div>
+
+		<div class="modal hide fade" id="change_password_popup">
+			<div class="modal-header"> <a class="close" data-dismiss="modal">×</a>
+				<h4 id="change_password_title">
+					{% trans "Change password..." %}
+					<img class="loading_img" src="{{ STATIC_URL }}todolist/img/ajax-loader_orange.gif" alt="Loading"/>
+				</h4>
+			</div>
+			<div class="modal-body text-center">
+			</div>
+		</div>
+
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container-fluid">
+
+					<span class="brand">UnMemorize</span>
+
+					{% if user.is_authenticated %}
+
+					<a href="{% url 'do_logout' %}" class="btn btn-inverse pull-right" id="logout_button"><i class="icon-white icon-off"></i></a>
+					<a  data-toggle="modal" data-target="#change_password_popup"
+					href="{% url 'django.contrib.auth.views.password_change' %}"
+					class="btn btn-inverse pull-right">
+						<i class="icon-white icon-wrench"></i>
+					</a>
+					<button type="button" class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+
+					<div style="height: 0px;" class="nav-collapse collapse">
+						{% include "todolist/category/category_list.html" %}
+					</div>
+
+					{% endif %}
+
+				</div>
+			</div>
+		</div>
+
+		<div id="content" class="container">
+			{% include "todolist/task/add_task.html" %}
+
+			{% block content %}
+			{% endblock %}
+		</div>
+
+	</body>
+
+</html>

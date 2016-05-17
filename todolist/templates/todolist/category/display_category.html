@@ -1,0 +1,19 @@
+{% ifequal category.id current_category.id %}
+	<li class="category category_{{ category.id }} active">
+	<a data-toggle="modal" data-target="#modify_category_popup" href="{% url 'modify_category' category.id %}">
+		{{ category }}
+	</a>
+{% else %}
+	<li class="category category_{{ category.id }}">
+	{% if all_tasks %}
+		<a href="{% url 'all_tasks' category.id %}">
+			{{ category }}
+		</a>
+	{% else %}
+		<a href="{% url 'index' category.id %}">
+			{{ category }}
+		</a>
+	{% endif %}
+{% endifequal %}
+	</li>
+

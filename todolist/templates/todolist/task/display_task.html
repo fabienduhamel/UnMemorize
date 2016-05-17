@@ -1,0 +1,63 @@
+{% load i18n %}
+
+{% if task %}
+
+	{% if task.complete %}
+<div class="row-fluid task_div task_div_complete">
+	{% else %}
+<div class="row-fluid task_div">
+	{% endif %}
+
+	<div class="span12">
+		<span class="hidden task_id">{{ task.id }}</span>
+		<table>
+			<tr>
+				<td class="task_left_informations">
+				{% if task.complete %}
+					<a href="{% url 'uncomplete_task' task.id %}">
+						<button class="btn btn-warning btn-small">
+							<i class="fa fa-undo"></i>
+						</button>
+					</a>
+				{% else %}
+					<span href="{% url 'complete_task' task.id %}">
+						<button class="btn btn-success btn-small complete_task_button">
+							<i class="fa fa-check"></i>
+						</button>
+					</span>
+				{% endif %}
+				</td>
+				<td class="task_description">
+					<div>
+					<span class="hidden task_priority_id">{{ task.priority.id }}</span>
+					{% if task.priority.value != 0 %}
+						<span href="#" class="btn btn-warning btn-mini disabled"
+						style="color: #FFFFFF; background-color: #{{ task.priority.color.value }}">
+							{{ task.priority }}
+						</span>
+					{% endif %}
+						<span class="task_description">
+						{% if task.complete %}
+							<strike>
+								{{ task }}
+							</strike>
+						{% else %}
+							{{ task }}
+						{% endif %}
+						</span>
+					</div>
+				</td>
+				<td class="task_due_date">
+					{% if task.complete %}
+						<span class="hidden task_formatted_due_date">{{ task.due_date|date:'d/m/y' }}</span>
+						{% include "todolist/task/display_completed_task_due_date.html" %}
+					{% else %}
+						<span class="hidden task_formatted_due_date">{{ task.due_date|date:'d/m/y' }}</span>
+						{% include "todolist/task/display_task_due_date.html" %}
+					{% endif %}
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+{% endif %}

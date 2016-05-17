@@ -1,0 +1,298 @@
+@font-face {
+	font-family: 'Architects-Daughter';
+		src: url('/static/fonts/ArchitectsDaughterRegular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+body {
+	padding-top: 40px;
+	max-width: 980px;
+	margin: 0px auto;
+}
+
+@media (max-width: 979px) {
+	body {
+		padding-top: 0px;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	.navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+
+	#id_description {
+		font-size: 10px;
+	}
+
+	#id_due_date {
+		font-size: 10px;
+		width: 50px;
+	}
+
+	.modal input[type="text"], .modal select{
+		width: 125px;
+	}
+}
+
+@media (min-width: 980px) {
+	#id_due_date {
+		width: 60px;
+	}
+}
+
+a:hover, a:focus {
+	text-decoration: none;
+}
+
+.loading_img {
+	display: none;
+	height: 18px;
+}
+
+#id_priority {
+	width: 40px;
+	font-size: 1em;
+	height: 100%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 1%;
+	padding-right: 1%;
+	border: 0px solid #000000;
+}
+
+#id_description {
+	width: 98%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 1%;
+	padding-right: 1%;
+	height: 100%;
+	border: 1px solid #FFF;
+	box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.075) inset;
+}
+
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+	margin: 0px;
+	height: 100%;
+}
+
+#id_due_date {
+	height: 100%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 2px;
+	padding-right: 2px;
+	border: 0px solid #000000;
+	box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.075) inset;
+}
+
+#add_task_button, #update_task_button {
+	height: 36px;
+	margin-right: 2px;
+}
+
+#add_task_div > div {
+	text-align: left;
+	border-bottom: 1px solid #3585FD;
+}
+
+#add_task_div [class*="span"] {
+	margin-left: 0px;
+}
+
+#toggle_all_tasks_div {
+	text-align: center;
+	font-size: 1em;
+	margin-top: 10px;
+}
+
+.row-fluid.task_div {
+	border-top: 1px solid #D5DBE1;
+}
+
+.row-fluid.task_div.task_div_complete {
+	opacity: 0.50;
+}
+
+.row-fluid.task_div:hover, .row-fluid.task_div:hover {
+	background-color: #006ECE;
+	background-image: linear-gradient(to bottom, #88BAF8, #6CA9F3);
+	background-repeat: repeat-x;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 -1px 0px rgba(0, 0, 0, 0.3) inset;
+}
+
+.row-fluid.task_div .task_div_complete:hover, .row-fluid.task_div .task_div_complete::hover {
+	background-color: #000000;
+}
+
+.row-fluid.task_div:before, .row-fluid.task_div:after {
+	height: 2px;
+}
+
+#no_task {
+	margin-top: 5px;
+}
+
+.btn i:before {
+	color: #000;
+}
+
+button.btn.btn-small.btn-success, input.btn.btn-small.btn-success[type="submit"] {
+	background-color: #FFF;
+	background-image: none;
+	background-repeat: repeat-x;
+	border-color: none;
+	color: #FFFFFF;
+	text-shadow: 0;
+	-moz-box-sizing: border-box;
+	border: 1px solid #3D83EC;
+	height: 40px;
+	width: 40px;
+}
+
+button.btn.btn-small, input.btn.btn-small[type="submit"] {
+	height: 40px;
+	width: 40px;
+}
+
+button.btn.btn-small.btn-success:hover, input.btn.btn-small.btn-success[type="submit"]:hover,
+button.btn.btn-small.btn-success:active, input.btn.btn-small.btn-success[type="submit"]:active {
+	background-color: #3D83EC;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	color: #FFFFFF;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.navbar-fixed-top {
+	margin-bottom: 0px;
+}
+
+form {
+	margin-bottom: 0px;
+}
+
+#content {
+	width: 100%;
+}
+
+td.task_left_informations {
+	padding-left: 10px;
+	padding-right: 10px;
+	max-width: 50px;
+}
+
+td.task_description div {
+	word-wrap: break-word;
+}
+
+td.task_description {
+	font-size: 0.9em;
+	table-layout: fixed;
+	width: 100%;
+}
+
+td.task_due_date {
+	font-size: 0.8em;
+	white-space: nowrap;
+	padding-right: 10px;
+}
+
+.navbar-inverse .brand:hover, .navbar-inverse .brand:active {
+	color: #5490EA;
+}
+
+.navbar-inverse .brand {
+	font-family: 'Architects-Daughter';
+	font-size: 1.6em;
+	color: #5490EA;
+}
+
+table#add_task_table {
+	margin-left: 3px;
+	margin-right: 3px;
+	margin-top: 6px;
+	margin-bottom: 6px;
+	border: 1px solid #CE6B02;
+	border-radius: 7px;
+	border-collapse: inherit;
+	-moz-box-shadow: 0px 0px 10px 0px #CE6B02;
+	-webkit-box-shadow: 0px 0px 10px 0px #CE6B02;
+	-o-box-shadow: 0px 0px 10px 0px #CE6B02;
+	box-shadow: 0px 0px 10px 0px #CE6B02;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#CE6B02, Direction=NaN, Strength=10);
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+}
+
+td#add_task_description {
+	width: 100%;
+}
+
+td#add_task_priority {
+	width: 55px;
+}
+
+td#add_task_submit {
+	width: 50px;
+}
+
+.today_due_date {
+	color: red;
+}
+
+.tomorrow_due_date {
+	color: red;
+}
+
+.in_two_days_due_date {
+	color: #CE6B02;
+}
+
+.in_seven_days_due_date {
+	color: green;
+}
+
+.before_today {
+	color: #7F460A;
+}
+
+#login_div {
+	margin-top: 30px;
+}
+
+.login_password_div {
+	margin-bottom: 8px;
+}
+
+input.login_password_input[type="password"] {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	width: 240px;
+}
+
+.login_submit_button {
+	margin-top: 0px;
+	padding: 13px 108px;
+}
+
+
+#logout_button {
+	margin-left: 5px;
+}
+
+#change_password_button {
+	margin-top: 10px;
+	padding: 6px 30px;
+}
+
+#add_category_button {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+

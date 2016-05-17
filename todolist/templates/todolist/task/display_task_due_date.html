@@ -1,0 +1,36 @@
+{% load i18n %}
+{% load due_date_extras %}
+
+{% if task.due_date %}
+	{% if task.due_date|is_yesterday %}
+		<span class="due_date before_today">{% trans "Yesterday" %}</span>
+	{% elif task.due_date|comes_in_days:0 %}
+		<span class="due_date today_due_date">{% trans "Today" %}</span>
+	{% elif task.due_date|comes_in_days:1 %}
+		<span class="due_date tomorrow_due_date">{% trans "Tomorrow" %}</span>
+	{% elif task.due_date|comes_in_days:2 %}
+		{% if task.due_date|is_in_current_year %}
+			<span class="due_date in_two_days_due_date">{{ task.due_date |date:"d b" }}</span>
+		{% else %}
+			<span class="due_date in_two_days_due_date">{{ task.due_date |date:"d b y" }}</span>
+		{% endif %}
+	{% elif task.due_date|comes_in_days:7 %}
+		{% if task.due_date|is_in_current_year %}
+			<span class="due_date in_seven_days_due_date">{{ task.due_date |date:"d b" }}</span>
+		{% else %}
+			<span class="due_date in_seven_days_due_date">{{ task.due_date |date:"d b y" }}</span>
+		{% endif %}
+	{% elif task.due_date|is_before_today %}
+		{% if task.due_date|is_in_current_year %}
+			<span class="due_date before_today">{{ task.due_date |date:"d b" }}</span>
+		{% else %}
+			<span class="due_date before_today">{{ task.due_date |date:"d b y" }}</span>
+		{% endif %}
+	{% else %}
+		{% if task.due_date|is_in_current_year %}
+			<span class="due_date">{{ task.due_date |date:"d b" }}</span>
+		{% else %}
+			<span class="due_date">{{ task.due_date |date:"d b y" }}</span>
+		{% endif %}
+	{% endif %}
+{% endif %}

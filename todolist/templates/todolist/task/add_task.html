@@ -1,0 +1,29 @@
+{% load i18n %}
+
+{% if new_task_form %}
+<div class="row-fluid" id="add_task_div">
+	<form id="add_task_form" action="{% url 'save_task' %}" method="post">
+		{% csrf_token %}
+		<div class="span12">
+			<table id="add_task_table">
+				<tr>
+					<td id="add_task_description">
+						<input type="text" name="description" maxlength="150" id="id_description" autocomplete="off" placeholder="{% trans "Add task" %}">
+					</td>
+					<td id="add_task_priority">
+						{{ new_task_form.priority }}
+					</td>
+					<td id="add_task_due_date">
+						<input type="text" name="due_date" id="id_due_date" autocomplete="off" placeholder="{% trans "Due date" %}">
+					</td>
+					<td id="add_task_submit">
+						<input id="id_category" type="hidden" name="category" value="{{ current_category.id }}" />
+						<input type="submit" class="btn btn-inverse btn-medium" id="add_task_button" value="Add"/>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</div>
+{% endif %}
+

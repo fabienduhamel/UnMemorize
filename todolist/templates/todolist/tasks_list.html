@@ -1,0 +1,31 @@
+{% extends "todolist/layout.html" %}
+{% load i18n %}
+
+{% block content %}
+	{% for task in object_list %}
+		{% include "todolist/task/display_task.html" with task=task %}
+	{% empty %}
+		<div id="no_task" class="text-center">
+			{% trans 'Empty.' %}
+		</div>
+	{% endfor %}
+
+	<div class="row-fluid" id="toggle_all_tasks_div">
+		<div class="span12">
+		{% if complete_tasks %}
+			<a href="{% url 'index' current_category.id %}">
+				{% trans 'Hide' %}
+			</a>
+		{% else %}
+			<a href="{% url 'all_tasks' current_category.id %}">
+				{% trans 'Show all' %}
+			</a>
+		{% endif %}
+		</div>
+	</div>
+
+	{% for task in complete_tasks %}
+		{% include "todolist/task/display_task.html" with task=task %}
+	{% endfor %}
+
+{% endblock %}

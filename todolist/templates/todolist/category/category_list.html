@@ -1,0 +1,17 @@
+{% load i18n %}
+
+<ul id="category_list" class="nav">
+	{% for category in category_list %}
+		{% include "todolist/category/display_category.html" %}
+	{% endfor %}
+	<li>
+		<a data-toggle="modal" data-target="#add_category_popup" href="{% url 'add_category' %}">
+			{% trans 'Add a category...' %}
+		</a>
+	</li>
+	<li>
+		<a data-toggle="modal" data-target="#delete_category_popup" href="{% url 'delete_category' %}">
+			{% trans 'Delete a category...' %}
+		</a>
+	</li>
+</ul>

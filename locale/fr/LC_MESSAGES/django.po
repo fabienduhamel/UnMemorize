@@ -1,0 +1,109 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-03-03 00:29+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: todolist/templates/registration/password_change_done.html:2
+msgid "Your password was changed."
+msgstr "Votre mot de passe a été changé."
+
+#: todolist/templates/registration/password_change_form.html:7
+msgid "Please correct the error below."
+msgstr "Corriger l'erreur."
+
+#: todolist/templates/registration/password_change_form.html:7
+msgid "Please correct the errors below."
+msgstr "Corriger les erreurs."
+
+#: todolist/templates/registration/password_change_form.html:13
+msgid "Old password"
+msgstr "Ancien mot de passe"
+
+#: todolist/templates/registration/password_change_form.html:18
+msgid "New password"
+msgstr "Nouveau mot de passe"
+
+#: todolist/templates/registration/password_change_form.html:23
+msgid "Password (again)"
+msgstr "Nouveau mot de passe (encore)"
+
+#: todolist/templates/registration/password_change_form.html:27
+msgid "Change"
+msgstr "Modifier"
+
+#: todolist/templates/todolist/layout.html:36
+#: todolist/templates/todolist/category/category_list.html:9
+msgid "Add a category..."
+msgstr "Ajouter une catégorie..."
+
+#: todolist/templates/todolist/layout.html:47
+msgid "Modify category..."
+msgstr "Modifier une catégorie..."
+
+#: todolist/templates/todolist/layout.html:58
+#: todolist/templates/todolist/category/category_list.html:14
+msgid "Delete a category..."
+msgstr "Supprimer une catégorie..."
+
+#: todolist/templates/todolist/layout.html:69
+msgid "Change password..."
+msgstr "Modifier le mot de passe..."
+
+#: todolist/templates/todolist/tasks_list.html:9
+msgid "Empty."
+msgstr "Vide."
+
+#: todolist/templates/todolist/tasks_list.html:17
+msgid "Hide"
+msgstr "Masquer"
+
+#: todolist/templates/todolist/tasks_list.html:21
+msgid "Show all"
+msgstr "Afficher tout"
+
+#: todolist/templates/todolist/category/add_category.html:6
+msgid "Add"
+msgstr "Ajouter"
+
+#: todolist/templates/todolist/category/delete_category.html:10
+msgid "Delete"
+msgstr "Supprimer"
+
+#: todolist/templates/todolist/category/modify_category.html:12
+msgid "Update"
+msgstr "Modifier"
+
+#: todolist/templates/todolist/task/add_task.html:11
+msgid "Add task"
+msgstr ""
+
+#: todolist/templates/todolist/task/add_task.html:17
+msgid "Due date"
+msgstr "Date"
+
+#: todolist/templates/todolist/task/display_task_due_date.html:6
+msgid "Yesterday"
+msgstr "Hier"
+
+#: todolist/templates/todolist/task/display_task_due_date.html:8
+msgid "Today"
+msgstr "Aujourd'hui"
+
+#: todolist/templates/todolist/task/display_task_due_date.html:10
+msgid "Tomorrow"
+msgstr "Demain"
